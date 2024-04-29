@@ -6,12 +6,12 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:sinhgadapp/screen5.dart';
+import 'package:sinhgadapp/View/login_signup.dart';
 
 
-class Screen4 extends StatefulWidget{
+class Screen0 extends StatefulWidget{
 
-  const Screen4({super.key});
+  const Screen0({super.key});
 
   @override 
   State createState()=>_ScreenState();
@@ -55,7 +55,7 @@ class _ScreenState extends State{
 
                 Navigator.push(
                   context,
-                MaterialPageRoute(builder: (context)=>const Screen5())
+                MaterialPageRoute(builder: (context)=>const Screen1())
                 );
               },
               child: SvgPicture.asset(

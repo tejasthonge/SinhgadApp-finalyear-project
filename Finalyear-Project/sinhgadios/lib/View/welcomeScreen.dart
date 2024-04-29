@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sinhgadapp/screen5.dart';
+import 'package:sinhgadapp/View/login_signup.dart';
 import 'package:sinhgadapp/screen6.dart';
 import 'package:sinhgadapp/screen7.dart';
 // import 'package:sinhgadapp/assets/images/colloge.png';

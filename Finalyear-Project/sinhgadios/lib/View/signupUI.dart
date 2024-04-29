@@ -1,22 +1,26 @@
 
 
+import "package:flutter/cupertino.dart";
 import "package:flutter/material.dart";
 import "package:flutter/widgets.dart";
-import "package:sinhgadapp/screen4.dart";
+import "package:sinhgadapp/View/LoginUI.dart";
+import 'package:google_fonts/google_fonts.dart';
+import "package:sinhgadapp/View/signupUI.dart";
+import "package:sinhgadapp/View/home.dart";
 
 
-class Screen1Login extends StatefulWidget{
+class SignupUI extends StatefulWidget{
 
-  const Screen1Login({super.key});
+  const SignupUI({super.key});
   
   @override 
-  State createState() => _Screen1State( );
+  State createState() => _SignupUIState( );
 
 
 
 }
 
-class _Screen1State extends State{ 
+class _SignupUIState extends State{ 
 
 
   @override 
@@ -66,16 +70,16 @@ class _Screen1State extends State{
                           children: [
                             Text( 
                           "SINHGAD",
-                          style: TextStyle( 
+                          style:GoogleFonts.quicksand( 
                             color: Color(0XFFFFA800),
-                            fontSize: 65,
+                            fontSize: 55,
                             fontWeight: FontWeight.bold,
                             
                           ),
                             ),
                             Text( 
                           "INSTITUTE",
-                          style: TextStyle( 
+                          style: GoogleFonts.quicksand( 
                             color: Color(0XFFFFA800),
                             fontSize: 60,
                             fontWeight: FontWeight.bold,
@@ -138,6 +142,34 @@ class _Screen1State extends State{
                       
                                 
                               ),
+
+                              Container( 
+                                margin: EdgeInsets.only(top: 20,
+                                left: 5,right: 5),
+                                padding: EdgeInsets.all(20),
+                                height: 60,
+                                
+                                decoration: BoxDecoration( 
+                      
+                                  borderRadius: BorderRadius.circular(100),
+                                  color: Color(0XFFE6E1E1)
+                                ),
+                                child: TextFormField ( 
+                      
+                                  decoration: InputDecoration( 
+                                    border: InputBorder.none,
+                                    prefixIcon: Icon( 
+                                      Icons.email
+                      
+                                    ),
+                                    hintText: "Enter Email",
+                      
+                                    // border:OutlineInputBorder(borderRadius: BorderRadius.N)
+                                  ),
+                                ),
+                      
+                                
+                              ),
                               Container( 
                                 margin: EdgeInsets.only(top: 20,
                                 left: 5,right: 5),
@@ -158,7 +190,35 @@ class _Screen1State extends State{
                                       Icons.lock
                       
                                     ),
-                                    hintText: "Password :",
+                                    hintText: "Enter Password",
+                      
+                                    // border:OutlineInputBorder(borderRadius: BorderRadius.)
+                                  ),
+                                ),
+                                
+                              ),
+
+                              Container( 
+                                margin: EdgeInsets.only(top: 20,
+                                left: 5,right: 5),
+                                padding: EdgeInsets.all(20),
+                                height: 60,
+                                
+                                decoration: BoxDecoration( 
+                      
+                                  borderRadius: BorderRadius.circular(100),
+                                  color: Color(0XFFE6E1E1)
+                                ),
+                                child: TextFormField ( 
+                      
+                                  decoration: InputDecoration( 
+                                    border: InputBorder.none,
+                      
+                                    prefixIcon: Icon( 
+                                      Icons.lock
+                      
+                                    ),
+                                    hintText: "Re-Enter Password",
                       
                                     // border:OutlineInputBorder(borderRadius: BorderRadius.)
                                   ),
@@ -171,7 +231,7 @@ class _Screen1State extends State{
                           GestureDetector(
                             onTap: () {
                               Navigator.push(context,
-                              MaterialPageRoute(builder: (context)=>Screen4()),
+                              MaterialPageRoute(builder: (context)=> const Screen1Login()),
                               );
                             },
                             child: Container(
@@ -188,14 +248,42 @@ class _Screen1State extends State{
                                   ),
                             
                                   child: Text( 
-                                    "Login",
+                                    "SignUp",
                                     style: TextStyle( 
                                       color: Colors.white,
                                       // fontSize: 
                                     ),
                                   ),
                             ),
+                          ),
+
+
+                         Row( 
+
+                          mainAxisAlignment: MainAxisAlignment.center,
+
+                          children: [ Text( "i aleredy have account!",
+                          
+                          ),
+                          
+                          GestureDetector(
+                            onTap: (){ 
+                              Navigator.push(context,
+                              
+                              MaterialPageRoute(builder: (context)=> const Screen1Login())
+                              );
+                            },
+                            child: Text(
+                               " Login",
+                               style:  TextStyle( 
+
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold
+                               ),
+                            ),
                           )
+                          ],
+                         )
                         ],
                       ),
                     ),

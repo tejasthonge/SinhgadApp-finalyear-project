@@ -1,11 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:sinhgadapp/screen6.dart';
-// import 'package:sinhgadapp/screen2.dart';
-import 'package:sinhgadapp/selectClgScreen1.2.dart';
 
-class Screen5 extends StatelessWidget {
-  const Screen5({super.key});
+
+
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sinhgadapp/View/LoginUI.dart';
+
+// import 'package:sinhgadapp/screen2.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sinhgadapp/View/signupUI.dart';
+
+class Screen1 extends StatelessWidget {
+  const Screen1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +19,7 @@ class Screen5 extends StatelessWidget {
       backgroundColor: Color.fromARGB(255, 255, 132, 0),
       body: SingleChildScrollView(
         padding: const EdgeInsets.only(
-          top: 100,
+          top: 60,
           bottom: 100,
           left: 10,
           right: 10,
@@ -113,11 +119,11 @@ class Screen5 extends StatelessWidget {
                       margin: const EdgeInsets.only(
                         top: 70,
                       ),
-                      child: const Text(
+                      child:  Text(
                         "Sinhgad Institute",
-                        style: TextStyle(
+                        style: GoogleFonts.quicksand(
                           fontWeight: FontWeight.bold,
-                          fontSize: 63,
+                          fontSize: 50,
                           color: Colors.orange,
                         ),
                       ),
@@ -139,52 +145,91 @@ class Screen5 extends StatelessWidget {
               //   // child:
               // ),
               Container(
-                  margin: const EdgeInsets.only(top: 20, bottom: 20),
-                  // width: double.infinity,
-                  // height: 300,
-                  padding: const EdgeInsets.all(30),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Column(
-                    children: [
-                     GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const SelectCollogeScreen2(),
-                                ));
-                          },
-                        
-                          child: Image.asset(
-                            "lib/assets/images/colloge.png",
-                            height: 200,
-                            color: Colors.orange,
-                          )),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Text(
-                        "Select the colloge",
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontFamily:
-                              String.fromEnvironment(AutofillHints.addressCity),
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                // width: ,
+  decoration: BoxDecoration( 
+
+    borderRadius: BorderRadius.circular(20),
+    color: Colors.white,
+
+  ),
+                child: Column(
+                  children: [
+                    
+                    GestureDetector(
+                      onTap: (){ 
+                        Navigator.push(context, 
+                          MaterialPageRoute(builder: (context)=>Screen1Login())
+                        );
+                      },
+                
+                      
+                      child: Container(
+                        margin: const EdgeInsets.only(top: 20, bottom: 20),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 50),
+                        decoration: BoxDecoration(
+                            // color: Colors.white,
+                            border: Border.all(width: 2,
+                            color:Color.fromARGB(255, 255, 132, 0),),
+                            borderRadius: BorderRadius.circular(50)),
+                        child: Text(
+                          "Login",
+                          style: GoogleFonts.encodeSansExpanded(
+                              color:Color.fromARGB(255, 255, 132, 0),
+                              fontSize: 20, fontWeight: FontWeight.w600),
                         ),
                       ),
-                    ],
-                  )),
-                  IconButton(onPressed: (){
-                    Navigator.pop(context);
-                  }, icon: Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                  ))
+                    ),
+                     GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, 
+                          MaterialPageRoute(builder: (context)=>const SignupUI())
+                        );
 
+                      },
+                
+                
+                      child: Container(
+                        
+                        margin: const EdgeInsets.only( bottom: 0),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 40),
+                        decoration: BoxDecoration(
+                            // color: Colors.white,
+                            border: Border.all(width: 2,
+                            color: Color.fromARGB(255, 255, 132, 0),),
+                            borderRadius: BorderRadius.circular(50)),
+                        child: Text(
+                          "SignUp",
+                          style: GoogleFonts.encodeSansExpanded(
+                             color: Color.fromARGB(255, 255, 132, 0),
+                              fontSize: 20, fontWeight: FontWeight.w600),
+                        ),
+                      ),
+                    ),
+                
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      
+                      decoration: BoxDecoration( 
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+
+                      child: Image.asset(
+                        "lib/assets/images/sinhgadIns.webp",
+                        // height: 250,
+                        // fit: BoxFit.conta
+
+                      ),
+                    )
+                  
+                  ],
+                ),
+              ),
+           
             ],
           ),
         ),
